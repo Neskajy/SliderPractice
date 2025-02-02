@@ -59,8 +59,6 @@ class Slider {
             dot.className = "dot";
             dot.dataset.index = Number(i);
 
-            console.log(this.activeSlideIndex);
-
             if (i == this.activeSlideIndex) {
                 dot.classList.add("active");
             }
@@ -99,22 +97,24 @@ class Slider {
             return;
         }
         if (this.targetArrow.classList.contains("right")) {
+            this.dots.children[this.activeSlideIndex].classList.remove("active");
             if (this.activeSlideIndex < this.slides.length - (this.slidesPerView)) {
                 this.activeSlideIndex++;
             } else {
                 this.activeSlideIndex = 0;
             }
-            this.slides[this.activeSlideIndex].classList.add("active");
-            this.rollSlide();
         } else if (this.targetArrow.classList.contains("left")) {
+            this.dots.children[this.activeSlideIndex].classList.remove("active");
             if (this.activeSlideIndex == 0) {
                 this.activeSlideIndex = this.slides.length - (this.slidesPerView);
             } else {
                 this.activeSlideIndex--;
             }
-            this.slides[this.activeSlideIndex].classList.add("active");
-            this.rollSlide();
         }
+        this.dots.children[this.activeSlideIndex].classList.remove("active");
+        this.slides[this.activeSlideIndex].classList.add("active");
+        this.dots.children[this.activeSlideIndex].classList.add("active");
+        this.rollSlide();
     }
 
     rollSlide() {
@@ -128,7 +128,7 @@ class Slider {
             const r = Math.floor(Math.random() * (max - min + 1) + min);
             const g = Math.floor(Math.random() * (max - min + 1) + min);
             const b = Math.floor(Math.random() * (max - min + 1) + min);
-            element.style.background = `rgb(${r}, ${g}, ${b})`; //Simplified color setting
+            element.style.background = `rgb(${r}, ${g}, ${b})`;
         });
     }
 
