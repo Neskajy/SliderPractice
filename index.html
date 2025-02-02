@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Native slider</title>
+    <link rel="stylesheet" href="public/css/index.css">
+</head>
+<body>
+    <h1>Classic slider</h1>
+    <div class="container">
+        <div class="slider">
+            <div class="slider-wrapper">
+                <div class="slider-gallery">
+                    <div class="slider-item active"></div>
+                    <!--
+                    js сам находит класс active и объявляет переменную 
+                    this.activeSlideIndex = В каком слайде есть класс active?. 
+                    Если он не нашел такой слайд, то this.activeSlideIndex = 0.
+                    Также js рандомно красит каждый слайд в любой цвет.
+                    Картинки мне было лень искать
+                    Код писал сам с нуля. Некоторые момента я брал из своего прошлого кода https://github.com/Neskajy/native-js-slider.git,
+                    и мне чуть-чуть помогал chatgpt
+                    -->
+                    <div class="slider-item"></div>
+                    <div class="slider-item"></div>
+                    <div class="slider-item"></div>
+                    <div class="slider-item"></div>            
+                    <div class="slider-item"></div>         
+                </div>
+            </div>
+            <div class="remoters">
+                <div class="btn left"><img src="public/media/icons/btn__left.svg" alt=""></div>
+                <div class="btn right"><img src="public/media/icons/btn__right.svg" alt=""></div>
+            </div>
+            <!--Автоматическое создание dots. создание remoters через js мне было делать лень-->
+        </div>
+    </div>
+    <script src="public/js/index.js" defer></script>
+</body>
+</html>
